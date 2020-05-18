@@ -1,13 +1,37 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Features from '../components/Features'
-import Testimonials from '../components/Testimonials'
-import Pricing from '../components/Pricing'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import React, { FunctionComponent } from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import Features from "../components/Features";
+import Testimonials from "../components/Testimonials";
+import Pricing from "../components/Pricing";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
-export const ProductPageTemplate = ({
+interface ProductPageTemplateProps {
+  image: any | string;
+  title: string;
+  heading: string;
+  description: string;
+  intro: {
+    blurbs: any[];
+  };
+  main: {
+    heading: string;
+    description: string;
+    image1: any | string;
+    image2: any | string;
+    image3: any | string;
+  };
+  testimonials: any[];
+  fullImage: any | string;
+  pricing: {
+    heading: string;
+    description: string;
+    plans: any[];
+  };
+}
+
+export const ProductPageTemplate: FunctionComponent<ProductPageTemplateProps> = ({
   image,
   title,
   heading,
@@ -30,10 +54,10 @@ export const ProductPageTemplate = ({
       <h2
         className="has-text-weight-bold is-size-1"
         style={{
-          boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
-          backgroundColor: '#f40',
-          color: 'white',
-          padding: '1rem',
+          boxShadow: "0.5rem 0 0 #f40, -0.5rem 0 0 #f40",
+          backgroundColor: "#f40",
+          color: "white",
+          padding: "1rem",
         }}
       >
         {title}
@@ -102,34 +126,10 @@ export const ProductPageTemplate = ({
       </div>
     </section>
   </div>
-)
+);
 
-ProductPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
-  heading: PropTypes.string,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
-  main: PropTypes.shape({
-    heading: PropTypes.string,
-    description: PropTypes.string,
-    image1: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    image2: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    image3: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  }),
-  testimonials: PropTypes.array,
-  fullImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  pricing: PropTypes.shape({
-    heading: PropTypes.string,
-    description: PropTypes.string,
-    plans: PropTypes.array,
-  }),
-}
-
-const ProductPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+const ProductPage: FunctionComponent<{ data: any }> = ({ data }) => {
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
@@ -145,18 +145,10 @@ const ProductPage = ({ data }) => {
         pricing={frontmatter.pricing}
       />
     </Layout>
-  )
-}
+  );
+};
 
-ProductPage.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
-}
-
-export default ProductPage
+export default ProductPage;
 
 export const productPageQuery = graphql`
   query ProductPage($id: String!) {
@@ -244,4 +236,4 @@ export const productPageQuery = graphql`
       }
     }
   }
-`
+`;
