@@ -7,10 +7,10 @@ import Content, { HTMLContent } from "../components/Content";
 
 interface BlogPostTemplateProps {
   content: ReactNode;
-  contentComponent: any;
+  contentComponent?: any;
   description: string;
   title: string;
-  helmet: ReactNode;
+  helmet?: ReactNode;
   tags: string[];
 }
 

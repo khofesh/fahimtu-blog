@@ -50,6 +50,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.151",
     "@types/react-helmet": "^6.0.0",
     "@types/uuid": "^7.0.3",
     "prettier": "^2.0.5",
