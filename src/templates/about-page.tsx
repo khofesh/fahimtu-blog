@@ -36,9 +36,13 @@ export const AboutPageTemplate: FunctionComponent<AboutPageTemplateProps> = ({
 
 interface AboutPageProps {
   data: {
-    markdownRemark: any;
+    markdownRemark: {
+      frontmatter: AboutPageTemplateProps;
+      html: string;
+    };
   };
 }
+
 const AboutPage: FunctionComponent<AboutPageProps> = ({ data }) => {
   const { markdownRemark: post } = data;
 

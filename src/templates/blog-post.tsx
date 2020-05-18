@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, ReactNode } from "react";
 import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
@@ -6,12 +6,12 @@ import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 
 interface BlogPostTemplateProps {
-  content?: string | null;
-  contentComponent?: React.FC<any>;
-  description?: string | null;
-  tags?: (string | null)[] | null;
-  title?: string | null;
-  helmet?: React.ReactNode | null;
+  content: ReactNode;
+  contentComponent: any;
+  description: string;
+  title: string;
+  helmet: ReactNode;
+  tags: string[];
 }
 
 export const BlogPostTemplate: FunctionComponent<BlogPostTemplateProps> = ({
@@ -54,7 +54,16 @@ export const BlogPostTemplate: FunctionComponent<BlogPostTemplateProps> = ({
   );
 };
 
-const BlogPost: FunctionComponent<{ data: any }> = ({ data }) => {
+interface BlogPostProps {
+  data: {
+    markdownRemark: {
+      frontmatter: BlogPostTemplateProps;
+      html: string;
+    };
+  };
+}
+
+const BlogPost: FunctionComponent<BlogPostProps> = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
