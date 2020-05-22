@@ -1,10 +1,19 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
 import { Link, graphql } from "gatsby";
 import Layout from "../../components/Layout";
 
-const TagsPage = ({
+interface TagsPageProps {
+  data: {
+    allMarkdownRemark: { group: any[] };
+    site: {
+      siteMetadata: { title: string };
+    };
+  };
+}
+
+const TagsPage: FunctionComponent<TagsPageProps> = ({
   data: {
     allMarkdownRemark: { group },
     site: {
