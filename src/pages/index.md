@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: Hello, welcome to my blog!
+title: Hello
 image: /img/landscape-5356009_1920.jpg
 heading: heading
 subheading: sdfsdf
