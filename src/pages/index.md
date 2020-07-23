@@ -1,11 +1,11 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
+title: Hello, welcome to my blog!
 image: /img/landscape-5356009_1920.jpg
 heading: heading
 subheading: sdfsdf
 mainpitch:
-  title: Why Kaldi
+  title: I'm Fahmi
   description: >
     Kaldi is the coffee store for everyone who believes that great coffee
     shouldn't just taste good, it should do good too. We source all of our beans
