@@ -35,6 +35,7 @@ export const IndexPageTemplate: FunctionComponent<IndexPageTemplateProps> = ({
         })`,
         backgroundPosition: `top left`,
         backgroundAttachment: `fixed`,
+        height: 400,
       }}
     >
       <div
