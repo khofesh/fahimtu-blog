@@ -38,7 +38,7 @@ export const IndexPageTemplate: FunctionComponent<IndexPageTemplateProps> = ({
         height: 400,
       }}
     >
-      <div
+      {/* <div
         style={{
           display: "flex",
           height: "150px",
@@ -58,7 +58,7 @@ export const IndexPageTemplate: FunctionComponent<IndexPageTemplateProps> = ({
         >
           {title}
         </h1>
-      </div>
+      </div> */}
     </div>
     <section className="section section--gradient">
       <div className="container">
