@@ -24,11 +24,7 @@ interface IndexPageTemplateProps {
 export const IndexPageTemplate: FunctionComponent<IndexPageTemplateProps> = ({
   image,
   title,
-  heading,
-  subheading,
   mainpitch,
-  description,
-  intro,
 }) => (
   <div>
     <div
@@ -54,9 +50,6 @@ export const IndexPageTemplate: FunctionComponent<IndexPageTemplateProps> = ({
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
           style={{
-            boxShadow:
-              "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
-            backgroundColor: "rgb(255, 68, 0)",
             color: "white",
             lineHeight: "1",
             padding: "0.25em",
@@ -64,19 +57,6 @@ export const IndexPageTemplate: FunctionComponent<IndexPageTemplateProps> = ({
         >
           {title}
         </h1>
-        <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            boxShadow:
-              "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
-            backgroundColor: "rgb(255, 68, 0)",
-            color: "white",
-            lineHeight: "1",
-            padding: "0.25em",
-          }}
-        >
-          {subheading}
-        </h3>
       </div>
     </div>
     <section className="section section--gradient">
@@ -93,25 +73,12 @@ export const IndexPageTemplate: FunctionComponent<IndexPageTemplateProps> = ({
                     <h3 className="subtitle">{mainpitch.description}</h3>
                   </div>
                 </div>
-                <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {heading}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div>
-                <Features gridItems={intro.blurbs} />
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
-                      See all products
-                    </Link>
-                  </div>
-                </div>
+
+                {/* <Features gridItems={intro.blurbs} /> */}
+
                 <div className="column is-12">
                   <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
+                    Latest posts
                   </h3>
                   <BlogRoll />
                   <div className="column is-12 has-text-centered">
