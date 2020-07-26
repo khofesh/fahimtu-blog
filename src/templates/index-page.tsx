@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 
 import Layout from "../components/Layout";
-import Features from "../components/Features";
+// import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 
 interface IndexPageTemplateProps {
@@ -23,7 +23,7 @@ interface IndexPageTemplateProps {
 
 export const IndexPageTemplate: FunctionComponent<IndexPageTemplateProps> = ({
   image,
-  title,
+  // title,
   mainpitch,
 }) => (
   <div>
