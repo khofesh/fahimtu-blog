@@ -27,7 +27,7 @@ export const IndexPageTemplate: FunctionComponent<IndexPageTemplateProps> = ({
   mainpitch,
 }) => (
   <div>
-    <div
+    {/* <div
       className="full-width-image margin-top-0"
       style={{
         backgroundImage: `url(${
@@ -38,7 +38,7 @@ export const IndexPageTemplate: FunctionComponent<IndexPageTemplateProps> = ({
         height: 400,
       }}
     >
-      {/* <div
+      <div
         style={{
           display: "flex",
           height: "150px",
@@ -58,8 +58,8 @@ export const IndexPageTemplate: FunctionComponent<IndexPageTemplateProps> = ({
         >
           {title}
         </h1>
-      </div> */}
-    </div>
+      </div>
+    </div> */}
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
