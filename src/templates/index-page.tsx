@@ -22,7 +22,7 @@ interface IndexPageTemplateProps {
 }
 
 export const IndexPageTemplate: FunctionComponent<IndexPageTemplateProps> = ({
-  image,
+  // image,
   // title,
   mainpitch,
 }) => (
