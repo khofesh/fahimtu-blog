@@ -10,9 +10,9 @@ $primary-invert: $kaldi-red-invert;
 $body-color: #333;
 $black: #2b2523;
 
-.navbar .navbar-menu {
-  box-shadow: none !important;
-}
+// .navbar .navbar-menu {
+//   box-shadow: none !important;
+// }
 
 .content .taglist {
   list-style: none;
@@ -159,5 +159,69 @@ $menu-label-color: $white-ter;
     text-align: center;
     max-width: 70%;
     margin: 0 0 1em;
+  }
+}
+
+.sidebar-c {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 25%;
+  height: 100%;
+  padding: 50px 40px;
+  background-color: #333;
+  color: #9b9b9b;
+
+  a {
+    display: block;
+    color: #969696;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+
+    &.active {
+      color: #ebebeb;
+    }
+  }
+}
+
+.content-c {
+  width: 75%;
+  margin-left: 25%;
+  padding: 50px;
+}
+
+.topnav-c {
+  display: none;
+}
+
+.divider-c {
+  width: 50%;
+  height: 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #5e5e5e;
+}
+
+.subheading-c {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar-c {
+    display: none;
+  }
+  .content-c {
+    margin-left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+  .topnav-c {
+    display: block;
   }
 }
