@@ -21,66 +21,15 @@ interface IndexPageTemplateProps {
   };
 }
 
-export const IndexPageTemplate: FunctionComponent<IndexPageTemplateProps> = ({
-  // image,
-  // title,
-  mainpitch,
-}) => (
+export const IndexPageTemplate: FunctionComponent<IndexPageTemplateProps> = ({}) => (
   <div>
-    {/* <div
-      className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`,
-        height: 400,
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          height: "150px",
-          lineHeight: "1",
-          justifyContent: "space-around",
-          alignItems: "left",
-          flexDirection: "column",
-        }}
-      >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            color: "white",
-            lineHeight: "1",
-            padding: "0.25em",
-          }}
-        >
-          {title}
-        </h1>
-      </div>
-    </div> */}
-    <section className="section section--gradient">
+    <section>
       <div className="container">
-        <div className="section">
+        <div>
           <div className="columns">
-            <div className="column is-10 is-offset-1">
+            <div>
               <div className="content">
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
-                  </div>
-                </div>
-
-                {/* <Features gridItems={intro.blurbs} /> */}
-
-                <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    Latest posts
-                  </h3>
+                <div className="column is-full">
                   <BlogRoll />
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/blog">
