@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { Link } from "gatsby";
-import github from "../img/github-icon.svg";
-import logo from "../img/logo.svg";
+// import github from "../img/github-icon.svg";
+// import logo from "../img/logo.svg";
 
 const Navbar: FunctionComponent = () => {
   const [active, activeSet] = React.useState(false);
@@ -18,14 +18,15 @@ const Navbar: FunctionComponent = () => {
 
   return (
     <nav
-      className="navbar is-transparent"
+      className="navbar is-dark"
       role="navigation"
       aria-label="main-navigation"
     >
       <div className="container">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item" title="Logo">
-            <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
+            {/* <img src={logo} alt="Kaldi" style={{ width: "88px" }} /> */}
+            Fahimtu
           </Link>
           {/* Hamburger menu */}
           <div
