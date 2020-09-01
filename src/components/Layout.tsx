@@ -1,12 +1,17 @@
 import React, { FunctionComponent } from "react";
 import { Helmet } from "react-helmet";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-import "./all.sass";
+import "./all.scss";
 import useSiteMetadata from "./SiteMetadata";
-import { withPrefix } from "gatsby";
+import { withPrefix, Link } from "gatsby";
+import { Location } from "@reach/router";
+import Navbar from "../components/Navbar";
 
-const TemplateWrapper: FunctionComponent = ({ children }) => {
+import instagram from "../img/social/instagram_white.svg";
+import github from "../img/social/github.svg";
+import linkedin from "../img/social/linkedin.svg";
+
+const TemplateWrapper: FunctionComponent = (props) => {
+  const { children } = props;
   const { title, description } = useSiteMetadata();
 
   return (
@@ -49,9 +54,80 @@ const TemplateWrapper: FunctionComponent = ({ children }) => {
           content={`${withPrefix("/")}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar />
-      <div>{children}</div>
-      <Footer />
+
+      <div className="sidebar-c">
+        <div className="subheading-c">test</div>
+        <div className="divider-c"></div>
+        <Location>
+          {({ location }) => {
+            return (
+              <>
+                <Link
+                  to="/"
+                  className={location.pathname === "/" ? "active" : ""}
+                >
+                  Home
+                </Link>
+                <Link
+                  to="/about"
+                  className={location.pathname === "/about" ? "active" : ""}
+                >
+                  About
+                </Link>
+                <Link
+                  to="/blog"
+                  className={location.pathname === "/blog" ? "active" : ""}
+                >
+                  Blog
+                </Link>
+                <Link
+                  to="/contact"
+                  className={location.pathname === "/contact" ? "active" : ""}
+                >
+                  Contact
+                </Link>
+              </>
+            );
+          }}
+        </Location>
+        <div className="divider-c"></div>
+        <div className="columns">
+          <div className="column is-narrow">
+            <a title="github" href="https://github.com">
+              <img
+                className="fas fa-lg"
+                src={github}
+                alt="Github"
+                style={{ width: "19px", height: "19px" }}
+              />
+            </a>
+          </div>
+          <div className="column is-narrow">
+            <a title="instagram" href="https://instagram.com">
+              <img
+                src={instagram}
+                alt="Instagram"
+                style={{ width: "19px", height: "19px" }}
+              />
+            </a>
+          </div>
+          <div className="column is-narrow">
+            <a title="linkedin" href="https://linkedin.com">
+              <img
+                src={linkedin}
+                alt="Linkedin"
+                style={{ width: "19px", height: "19px" }}
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="topnav-c" id="myTopnav">
+        <Navbar />
+      </div>
+
+      <div className="content-c">{children}</div>
     </div>
   );
 };
