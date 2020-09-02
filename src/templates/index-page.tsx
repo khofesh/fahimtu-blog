@@ -54,7 +54,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
-    <Layout>
+    <Layout description={frontmatter.mainpitch.description}>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
