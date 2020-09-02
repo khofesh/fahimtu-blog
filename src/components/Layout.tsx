@@ -10,7 +10,11 @@ import instagram from "../img/social/instagram_white.svg";
 import github from "../img/social/github.svg";
 import linkedin from "../img/social/linkedin.svg";
 
-const TemplateWrapper: FunctionComponent = (props) => {
+interface TemplateWrapperProps {
+  description?: string;
+}
+
+const TemplateWrapper: FunctionComponent<TemplateWrapperProps> = (props) => {
   const { children } = props;
   const { title, description } = useSiteMetadata();
 
@@ -56,7 +60,9 @@ const TemplateWrapper: FunctionComponent = (props) => {
       </Helmet>
 
       <div className="sidebar-c">
-        <div className="subheading-c">test</div>
+        <div className="subheading-c">
+          {props.description || "Some description here"}
+        </div>
         <div className="divider-c"></div>
         <Location>
           {({ location }) => {
