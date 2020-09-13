@@ -69,6 +69,23 @@ exports.createPages = ({ actions, graphql }) => {
         },
       });
     });
+
+    // Create blog-list pages
+    const test = result.data.allMarkdownRemark.edges;
+    const testPerPage = 1;
+    const numPages = Math.ceil(test.length / testPerPage);
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/test` : `/test/${i + 1}`,
+        component: path.resolve("src/templates/test-page.tsx"),
+        context: {
+          limit: testPerPage,
+          skip: i * testPerPage,
+          numPages,
+          currentPage: i + 1,
+        },
+      });
+    });
   });
 };
 

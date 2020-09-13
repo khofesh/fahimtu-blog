@@ -63,8 +63,8 @@ interface BlogPostProps {
   };
 }
 
-const BlogPost: FunctionComponent<BlogPostProps> = ({ data }) => {
-  const { markdownRemark: post } = data;
+const BlogPost: FunctionComponent<BlogPostProps> = (props) => {
+  const { markdownRemark: post } = props.data;
 
   return (
     <Layout>
@@ -104,3 +104,42 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+// export const something = graphql`
+//   query blogListQuery($skip: Int!, $limit: Int!) {
+//     allMarkdownRemark(
+//       sort: { fields: [frontmatter___date], order: DESC }
+//       limit: $limit
+//       skip: $skip
+//     ) {
+//       edges {
+//         node {
+//           frontmatter {
+//             date(formatString: "MMMM DD, YYYY")
+//             title
+//             description
+//             tags
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
+
+/*
+query blogListQuery {
+  allMarkdownRemark(limit: 6, skip: 0, sort: {fields: frontmatter___date, order: DESC}) {
+    edges {
+      node {
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          description
+          tags
+        }
+      }
+    }
+  }
+}
+
+*/
